@@ -22,6 +22,18 @@ let mutareElement = document.querySelector("#mutare");
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  let fijiElement = document.querySelector("#fiji");
+  if (fijiElement) {
+    let fijiDateElement = fijiElement.querySelector(".date");
+    let fijiTimeElement = fijiElement.querySelector(".time");
+    let fijiTime = moment().tz("Pacific/fiji");
+
+    fijiDateElement.innerHTML = fijiTime.format("MMMM	Do YYYY");
+    fijiTimeElement.innerHTML = fijiTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
   function updateCity(event) {
@@ -43,6 +55,7 @@ let mutareElement = document.querySelector("#mutare");
     "A"
   )}</small></div>
   </div>
+  <a href="/">All Cities</a>
   `;
 }
 
